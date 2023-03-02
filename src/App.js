@@ -5,7 +5,7 @@ import AddPet from "./components/pages/addPet";
 import Search from "./components/pages/search";
 import Watch from "./components/pages/watch";
 import Login from "./components/pages/login";
-import More from "./components/pages/more";
+import Pet from "./components/pages/more";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -22,7 +22,7 @@ function App() {
         <Route path={'/addPet'} element={<AddPet/>} />
         <Route path={'/watch'} element={<Watch/>} />
         <Route path={'/search'} element={<Search/>} />
-        <Route path={'/more'} element={<More/>} />
+        <Route path={'/more/:id'} element={<Pet/>} />
       </Routes>
     </div>
   );

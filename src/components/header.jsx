@@ -28,6 +28,9 @@ const Header = () => {
                                 <li className="nav-item">
                                     <Link to = {'/login'} className="nav-link">Войти</Link>
                                 </li>
+                                 <li className="nav-item">
+                                    <Link to = {'/more'} className="nav-link">Карточка</Link>
+                                </li>
                                 <li className="nav-item dropdown">
                                     <Link to = {'/'} className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Объявления
@@ -36,7 +39,7 @@ const Header = () => {
                                         <li><Link to = {'/addPet'} className="dropdown-item">Добавить объявление</Link></li>
                                         <li><Link to = {'/'} className="dropdown-divider" /></li>
                                         <li><Link to = {'/search'} className="dropdown-item">Поиск по объявлениям</Link></li>
-                                        <li><Link to = {'/more'} className="dropdown-item">Карточки</Link></li>
+                                        <li><Link to = {'/more'} className="dropdown-item">Карточка</Link></li>
                                     </ul>
                                 </li>
                             </ul>
