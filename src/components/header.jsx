@@ -9,7 +9,7 @@ const Header = () => {
             <header>
                 <nav className="navbar navbar-expand-lg navbar-light bg-">
                     <div className="container-fluid">
-                        <Link to = {'/'} className="navbar-brand" href="index.html"><img src={logo} className Name="rounded-3" alt="logo" style={{ 'MinWidth': '50px' }}/></Link>
+                        <Link to = {'/'} className="navbar-brand" href="index.html"><img src={logo} className Name="rounded-3" alt="logo" style={{ 'maxWidth': '150px' }}/></Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -25,6 +25,9 @@ const Header = () => {
                                 <li className="nav-item">
                                     <Link to = {'/registration'} className="nav-link">Регистрация</Link>
                                 </li>
+                                <li className="nav-item">
+                                    <Link to = {'/login'} className="nav-link">Войти</Link>
+                                </li>
                                 <li className="nav-item dropdown">
                                     <Link to = {'/'} className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Объявления
@@ -33,6 +36,7 @@ const Header = () => {
                                         <li><Link to = {'/addPet'} className="dropdown-item">Добавить объявление</Link></li>
                                         <li><Link to = {'/'} className="dropdown-divider" /></li>
                                         <li><Link to = {'/search'} className="dropdown-item">Поиск по объявлениям</Link></li>
+                                        <li><Link to = {'/more'} className="dropdown-item">Карточки</Link></li>
                                     </ul>
                                 </li>
                             </ul>

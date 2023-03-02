@@ -53,7 +53,7 @@ const Registration = () => {
                             </div>
                         </div>
                         <div className="col-12">
-                            <button className="btn btn-primary" type="submit">Отправить форму</button>
+                            <button className="btn btn-success" type="submit">Отправить форму</button>
                         </div>
                     </form>
                 </div>

@@ -30,7 +30,7 @@ const Search = () => {
                             <input type="text" className="form-control" id="password"/>
                         </div>
 
-                        <Link to = {'/'} className="btn btn-primary">Найти</Link>
+                        <Link to = {'/'} className="btn btn-success">Найти</Link>
                     </form>
                 </div>
             </main>

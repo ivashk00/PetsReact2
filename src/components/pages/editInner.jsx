@@ -4,9 +4,9 @@ const EditIn = (props) => {
     return (
         <div>
             <main style={{'minHeight': '70vh'}}>
-                <h2 className="text-center text-white bg-primary m-2">Редактирование объявления</h2>
+                <h2 className="text-center text-white bg-success m-2">Редактирование объявления</h2>
                 <div className="p-3">
-                    <form className="w-50 m-auto border border-primary p-3" style={{'minWidth': '300px'}}>
+                    <form className="w-50 m-auto border border-success p-3" style={{'minWidth': '300px'}}>
 
                         <div className="mb-3">
                             <label for="kind" className="form-label">Введите вид животного:</label>
@@ -37,7 +37,7 @@ const EditIn = (props) => {
                         </div>
 
 
-                        <input type="submit" className="btn btn-primary form-control" value="Отправить" />
+                        <input type="submit" className="btn btn-success form-control" value="Отправить" />
                     </form>
                 </div>
             </main>

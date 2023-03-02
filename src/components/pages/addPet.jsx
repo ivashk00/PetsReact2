@@ -67,7 +67,7 @@ const AddPet = () => {
                             <label className="form-check-label" for="check1">Подтвердить согласие на обработку персональных данных</label>
                         </div>
 
-                        <input type="submit" className="btn btn-primary form-control" value="Зарегистрировать" />
+                        <input type="submit" className="btn btn-success form-control" value="Зарегистрировать" />
                     </form>
                 </div>
             </main>
