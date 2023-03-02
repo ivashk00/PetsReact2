@@ -33,7 +33,7 @@ const Main = () => {
             <Header/>
                 <main style={{'minHeight':'70vh'}}>
                     <Slider/>
-                    <h2 className="text-center text-white bg-primary m-2">Карточки найденных животных</h2>
+                    <h2 className="text-center text-white bg-success m-2">Карточки найденных животных</h2>
                     <Cards animal = {animal1}/>
                     <Cards animal = {animal2}/>
                     <Cards animal = {animal3}/>

@@ -8,9 +8,9 @@ const AddPet = () => {
         <div>
             <Header />
             <main style={{'minHeight': '70vh'}}>
-                <h2 className="text-center text-white bg-primary m-2">Добавление нового объявления</h2>
+                <h2 className="text-center text-white bg-success m-2">Добавление нового объявления</h2>
                 <div className="p-3">
-                    <form className="w-50 m-auto border border-primary p-3" style={{'minWidth': '300px'}}>
+                    <form className="w-50 m-auto border border-success p-3" style={{'minWidth': '300px'}}>
 
                         <div className="mb-3">
                             <label for="name" className="form-label">Введите ваше имя</label>

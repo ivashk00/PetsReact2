@@ -8,39 +8,39 @@ const Prof = (props) => {
     return (
         <div>
             <main style={{ 'minHeight': '70vh' }}>
-                <h2 className="text-center text-white bg-primary m-2">Личный кабинет</h2>
+                <h2 className="text-center text-white bg-success m-2">Личный кабинет</h2>
                 <div className="p-3">
                     <div className="d-flex flex-row flex-wrap border m-auto p-3 w-50" style={{ 'minWidth': '300px' }}>
 
-                        <p className="w-50 text-primary" style={{ 'min-width': '250px' }}>id:</p>
+                        <p className="w-50 text-success" style={{ 'min-width': '250px' }}>id:</p>
                         <p className="w-50" style={{ 'min-width': '250px' }}> {props.user.id}</p>
 
-                        <p className="w-50 text-primary" style={{ 'min-width': '250px' }}>Телефон:</p>
+                        <p className="w-50 text-success" style={{ 'min-width': '250px' }}>Телефон:</p>
                         <p className="w-50" style={{ 'min-width': '250px' }}> {props.user.phone}</p>
 
-                        <p className="w-50 text-primary" style={{ 'minWidth': '300px' }}>email:</p>
+                        <p className="w-50 text-success" style={{ 'minWidth': '300px' }}>email:</p>
                         <p className="w-50" style={{ 'minWidth': '300px' }}>{props.user.email}</p>
 
-                        <p className="w-50 text-primary" style={{ 'minWidth': '300px' }}>Имя:</p>
+                        <p className="w-50 text-success" style={{ 'minWidth': '300px' }}>Имя:</p>
                         <p className="w-50" style={{ 'minWidth': '300px' }}>{props.user.firstname}</p>
 
-                        <p className="w-50 text-primary" style={{ 'minWidth': '300px' }}>Дата регистрации:</p>
+                        <p className="w-50 text-success" style={{ 'minWidth': '300px' }}>Дата регистрации:</p>
                         <p className="w-50" style={{ 'minWidth': '300px' }}>{props.user.dateOfRegist}</p>
 
-                        <p className="w-50 text-primary" style={{ 'minWidth': '300px' }}>Количество найденных животных:</p>
+                        <p className="w-50 text-success" style={{ 'minWidth': '300px' }}>Количество найденных животных:</p>
                         <p className="w-50" style={{ 'minWidth': '300px' }}>{props.user.countF}</p>
 
-                        <p className="w-50 text-primary" style={{ 'minWidth': '300px' }}>Количество объявлений:</p>
+                        <p className="w-50 text-success" style={{ 'minWidth': '300px' }}>Количество объявлений:</p>
                         <p className="w-50" style={{ 'minWidth': '300px' }}>{props.user.countOb}</p>
 
                         <form className="d-flex">
-                            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Сменить номер телефона
                             </button>
                         </form>
 
                         <form className="d-flex">
-                            <button type="button" className="btn btn-primary" data-bs-toggle="modal"
+                            <button type="button" className="btn btn-success" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal2">
                                 Сменить эл. адрес
                             </button>
@@ -86,7 +86,7 @@ const Prof = (props) => {
                                     <label for="exampleInputPassword1" className="form-label">Укажите пароль</label>
                                     <input type="password" className="form-control" id="exampleInputPassword1" />
                                 </div>
-                                <button type="submit" className="btn btn-primary">Сменить</button>
+                                <button type="submit" className="btn btn-success">Сменить</button>
                             </form>
                         </div>
                     </div>
@@ -134,7 +134,7 @@ const Prof = (props) => {
                                     <label for="exampleInputPassword1" className="form-label">Укажите пароль</label>
                                     <input type="password" className="form-control" id="exampleInputPassword1" />
                                 </div>
-                                <button type="submit" className="btn btn-primary">Сменить</button>
+                                <button type="submit" className="btn btn-success">Сменить</button>
                             </form>
                         </div>
                     </div>

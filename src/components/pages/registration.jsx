@@ -8,7 +8,7 @@ const Registration = () => {
         <div>
             <Header />
             <main style={{'minHeight': '70vh'}}>
-                <h2 className="text-center text-white bg-primary m-2">Регистрация</h2>
+                <h2 className="text-center text-white bg-success m-2">Регистрация</h2>
                 <div className="p-3">
                     <form className="row g-3">
                         <div className="col-md-4">
