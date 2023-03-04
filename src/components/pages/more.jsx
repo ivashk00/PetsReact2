@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import Header from "../header";
-
 import Footer from "../footer";
 import MoreInner from "./moreInner";
 
@@ -19,7 +18,13 @@ function Pet() {
         fetch(url, requestOptions)
             .then(response => response.json())
             .then(result => {
-                console.log(result);
+                console.log(result)
+                if(result.data.pet.length !==0){
+                    setPet(result.data.pet)
+                }
+                else{
+                    document.getElementById('err').style.display = "block"
+                }
                 setPet(result.data.pet)
             })
             .catch(error => console.log('error', error));

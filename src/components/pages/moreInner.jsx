@@ -13,6 +13,7 @@ const MoreInner = (props) => {
             <main style={{'minHeight': '70vh'}}>
                 <h2 className="text-center text-white bg-success m-2" style={{'textTransform': 'uppercase'}}>Карточка животного {props.animal.kind}</h2>
                 <div className="d-flex flex-row flex-wrap border  border-success m-auto  p-3 position-relative w-50" style={{'minWidth': '300px'}}>
+                <p id="err" className="w-50 text-success" style={{'minWidth': '250px', 'display': 'none'}}> Животное не найдено, попробуйте ввести другой "id".</p>
                     <div className="d-flex flex-row flex-wrap justify-content-around border border">
                         {img}
                     </div>

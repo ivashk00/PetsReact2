@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-//import { useNavigate } from 'react-router-dom';
-//import { render } from 'react-router-dom';
 
 import Header from "../header";
 import Footer from "../footer";
-
 
 const Login = () => {
 
@@ -12,15 +9,9 @@ const Login = () => {
     let [token, setToken] = useState();
     function auth(e) {
         e.preventDefault();
-        //'use strict'
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
         const forms = document.getElementById('form')
 
-        // Loop over them and prevent submission
-
         if (!forms.checkValidity()) {
-            // e.preventDefault()
             e.stopPropagation()
             forms.classList.add('was-validated')
             return
@@ -84,7 +75,7 @@ const Login = () => {
                             <input type="submit" className="btn btn-success m-3" value="Войти" />
                         </form>
                         <p className='text-danger text-center' id='error' style={{ display: 'none' }}>Неправилный адрес электронной почты и e-mail</p>
-                        <p className='text-success text-center' id='success' style={{ display: 'none' }}>Вы успешно зарегистрировались, ваш токен: {token}</p>
+                        <p className='text-success text-center' id='success' style={{ display: 'none' }}>Вы успешно зарегистрировались!</p>
                         <p className='text-center'>e-mail: user@user.ru; Пароль: paSSword1</p>
                     </div>
                 </main>

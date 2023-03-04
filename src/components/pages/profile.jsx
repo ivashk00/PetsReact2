@@ -1,20 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Header from "../header";
 import Footer from "../footer";
 import Prof from "./prof";
 
-
-
-
 const Profile = (props) => {
 
-    let user1 = {id: '21', phone: '+7-911-456-78-78', email: 'leonid@yandex.ru', firstname: 'Леонид', dateOfRegist: '26-06-2015', countF: '2', countOb: '4'}
+    let [profil, setProfil]=useState({id:'', phone:'', email:'', name:'', registrationDate:'', countPets:'', countOrder:''})
+    useEffect(()=>getprof(),[])
+
+    function getprof(){
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", "Bearer " + localStorage.token);
+    
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders
+        };
+    fetch("https://pets.сделай.site/api/users", requestOptions)
+    .then(response => response.json())
+    .then(result => {
+        setProfil(result)
+        console.log(result)
+    })
+
+    .catch(error => console.log('error', error))
+    
+    }
 
     return (
         <div>
             <Header />
-                <Prof user = {user1}/>
+                <Prof user = {profil}/>
             <Footer />
         </div>
     );

@@ -1,13 +1,13 @@
 import React from "react";
 
-import cat from '../img/cat1.jpeg';
+import cat from '../img/кошка.jpg';
 import goat from '../img/коза.jpeg';
 import chiken from '../img/курица1.jpg'
 
 import Header from "../header";
 import Footer from "../footer";
 import Slider from "./slider";
-import Cards from "./cards";
+import Cards from "../pages/cards";
 
 const Main = () => {
     

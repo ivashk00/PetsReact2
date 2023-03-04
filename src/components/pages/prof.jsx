@@ -22,16 +22,16 @@ const Prof = (props) => {
                         <p className="w-50" style={{ 'minWidth': '300px' }}>{props.user.email}</p>
 
                         <p className="w-50 text-success" style={{ 'minWidth': '300px' }}>Имя:</p>
-                        <p className="w-50" style={{ 'minWidth': '300px' }}>{props.user.firstname}</p>
+                        <p className="w-50" style={{ 'minWidth': '300px' }}>{props.user.name}</p>
 
                         <p className="w-50 text-success" style={{ 'minWidth': '300px' }}>Дата регистрации:</p>
-                        <p className="w-50" style={{ 'minWidth': '300px' }}>{props.user.dateOfRegist}</p>
+                        <p className="w-50" style={{ 'minWidth': '300px' }}>{props.user.registrationDate}</p>
 
                         <p className="w-50 text-success" style={{ 'minWidth': '300px' }}>Количество найденных животных:</p>
-                        <p className="w-50" style={{ 'minWidth': '300px' }}>{props.user.countF}</p>
+                        <p className="w-50" style={{ 'minWidth': '300px' }}>{props.user.countPets}</p>
 
                         <p className="w-50 text-success" style={{ 'minWidth': '300px' }}>Количество объявлений:</p>
-                        <p className="w-50" style={{ 'minWidth': '300px' }}>{props.user.countOb}</p>
+                        <p className="w-50" style={{ 'minWidth': '300px' }}>{props.user.countOrder}</p>
 
                         <form className="d-flex">
                             <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">

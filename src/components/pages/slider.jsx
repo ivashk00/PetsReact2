@@ -1,63 +1,92 @@
-import React from "react";
-import cat from '../img/кошка.jpg';
-import dog from '../img/собака.jpg';
-import chikken from '../img/курица1.jpg';
+import React, {useEffect, useState} from "react";
+
+const Slide = (props) => {
+    return (
+        <div className={props.css_class}>
+            <img src={'https://pets.сделай.site' + props.data.image} className="d-block m-auto mt-3" alt="photo_pets"
+                 style={{width: '300px', height: '250px'}}/>
+            <h2 className="text-center">{props.data.kind}</h2>
+            <p className="text-center">{props.data.description}</p>
+        </div>
+    )
+}
+
+function Loader(props) {
+  return(<div className='justify-content-center align-items-center' id='loader' style={props.display}>
+    <div className='fs-1 text-success'>...Идет загрузка</div>
+  </div>)
+}
 
 const Slider = () => {
+    let [slide, setSlide] = useState({data: {pets: []}});
+    useEffect(() => requestSlide(slide, setSlide), []);
+
+    let [show, setShow]=useState({display:'flex'});
+    useEffect(()=>requestSlide(slide, setSlide), []);
+
+    const requestSlide = (slide, setSlide) => {
+        const requestOptions = {
+            method: 'GET',
+        };
+
+        fetch("https://pets.сделай.site/api/pets/slider", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                setSlide(result)
+                setShow({display:'none'});
+            })
+            .catch(error => console.log('error', error));
+
+    };
+
+    let slides = slide.data.pets.map((pet, index) => {
+        if (index === 0) {
+            return <Slide data={pet} key={index} css_class='carousel-item active'/>;
+        } else {
+            return <Slide data={pet} key={index} css_class='carousel-item'/>;
+
+        }
+    })
+
+
+    let indicators = slide.data.pets.map((pet, index) => {
+        if (index === 0) {
+            return <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                           className="active" aria-current="true" aria-label="Slide 1" key={index + 'btn'}></button>;
+        } else {
+            return <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={index}
+                           aria-label={"Slide " + (Number(index) + 1)} key={index + 'btn'}></button>;
+
+        }
+    })
+
+    if (slides.length < 1) return (<div></div>);
+
     return (
         <div>
+          <Loader display={show}/>
             <h2 className="text-center text-white bg-success m-2">Найденные животные</h2>
-            <div id="carouselExampleDark" className="carousel carousel-dark slide">
+            <div id="carouselExampleIndicators" className="carousel slide m-auto bg-success bg-opacity-25 w-75 p-2"
+                 data-bs-ride="carousel" style={{'minHeight': '400px'}}>
                 <div className="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    {indicators}
                 </div>
                 <div className="carousel-inner">
-                    <div className="carousel-item active" data-bs-interval="10000">
-                        <img src={cat} className="rounded mx-auto d-block" style={{'width': '700px'}}/>
-                            <div className="carousel-caption d-none d-md-block">
-                                <div className="position-relative py-2 px-4 text-bg-dark border border-dark rounded-pill card text-bg-primary mb-3" style={{'max-width': '18rem'}}>
-                                    <div className="card-body">Найдена кошка</div>
-                                    <div className="card-body">
-                                        <p className="card-text">Звонить на этот номер +7 *** *** ** **</p>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                    <div className="carousel-item" data-bs-interval="2000">
-                        <img src={dog} className="rounded mx-auto d-block" style={{'width': '700px'}}/>
-                        <div className="carousel-caption d-none d-md-block">
-                            <div className="position-relative py-2 px-4 text-bg-dark border border-dark rounded-pill card text-bg-primary mb-3" style={{'max-width': '18rem'}}>
-                                <div className="card-body">Найдена собака</div>
-                                <div className="card-body">
-                                    <p className="card-text">Был найден у забора на Мурино, на шее есть медальен</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <img src={chikken} className="rounded mx-auto d-block" style={{'width': '700px'}}/>
-                        <div className="carousel-caption d-none d-md-block">
-                        <div className="position-relative py-2 px-4 text-bg-dark border border-dark rounded-pill card text-bg-primary mb-3" style={{'max-width': '18rem'}}>
-                                <div className="card-body">Найдена курица</div>
-                                <div className="card-body">
-                                    <p className="card-text">Коричневая, яйца не несет, забирайте даром</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {slides}
                 </div>
+                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Предыдущий</span>
+                </button>
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Следующий</span>
+                </button>
             </div>
-            <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Предыдущий</span>
-  </button>
-  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Следующий</span>
-  </button>
         </div>
-            )
+    );
 };
-            export default Slider;
+
+export default Slider;
